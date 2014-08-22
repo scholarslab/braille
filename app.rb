@@ -57,11 +57,10 @@ post '/braille' do
 				"#{output_file.read}"
 
 			else
-                $stderr.puts "Error " + output_string
 
 				##Exit with status code 502
 				status 502
-				"Content not successfully converted to Braille."
+				"Content not successfully converted to Braille." + output_string
 
 			end
 
