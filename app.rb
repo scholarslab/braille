@@ -60,8 +60,7 @@ post '/braille' do
 
 				##Exit with status code 502
 				status 502
-				"Content not successfully converted to Braille." + params[:content] + "foooo"
-
+				"Content not successfully converted to Braille. #{params[:content]} is what we should have converted."
 			end
 
 		ensure
