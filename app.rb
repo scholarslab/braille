@@ -46,7 +46,7 @@ post '/braille' do
 		begin
 
 			##Make the system call
-			output_string = `./bin/xml2brl -p -f ./share/liblouisxml/lbx_files/canonical.cfg,./share/liblouis/tables #{input_file.path} #{output_file.path}`
+			output_string = `./bin/xml2brl -p -f ./share/liblouisxml/lbx_files,./share/liblouis/tables #{input_file.path} #{output_file.path}`
 
 			##Check to make sure that the length of the output file is greater than 0; if not, then
 			## exit with status 502 "Content not successfully converted to braille."
