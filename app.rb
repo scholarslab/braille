@@ -46,7 +46,7 @@ post '/braille' do
 		begin
 
 			##Make the system call
-			system("./bin/xml2brl -p #{input_file.path} #{output_file.path}")
+			output_string = `./bin/xml2brl -p #{input_file.path} #{output_file.path}`
 
 			##Check to make sure that the length of the output file is greater than 0; if not, then
 			## exit with status 502 "Content not successfully converted to braille."
@@ -57,6 +57,7 @@ post '/braille' do
 				"#{output_file.read}"
 
 			else
+                $stderr.puts "Error " + output_string
 
 				##Exit with status code 502
 				status 502
@@ -112,7 +113,7 @@ post '/braille.json' do
 		begin
 
 			##Make the system call
-			system("./bin/xml2brl -p #{input_file.path} #{output_file.path}")
+			output_string = `./bin/xml2brl -p #{input_file.path} #{output_file.path}`
 
 			##Check to make sure that the length of the output file is great than 0; if not, then
 			## exit with a status 502 "Content not successfully converted to braille."
@@ -124,6 +125,8 @@ post '/braille.json' do
 				outputInJSON.to_json
 
 			else
+
+                $stderr.puts "Error " + output_string
 
 				## Exit with status code 502
 				status 502
