@@ -60,7 +60,7 @@ post '/braille' do
 
 				##Exit with status code 502
 				status 502
-				"Content not successfully converted to Braille." + output_string
+				"Content not successfully converted to Braille." + output_string + "foooo"
 
 			end
 
