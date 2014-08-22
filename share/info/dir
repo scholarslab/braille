@@ -16,3 +16,4 @@ File: dir,	Node: Top	This is the top of the INFO tree
 
 Misc
 * Liblouis: (liblouis).         A braille translator and back-translator
+* Liblouisxml: (liblouisxml).   An xml to Braille Translation Library.
